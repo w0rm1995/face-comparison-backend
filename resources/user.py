@@ -49,7 +49,7 @@ class UsersResources(Resource):
 
 class UserResources(Resource):
     def get(self, user_id):
-        user_schema = UserSchema()
+        user_schema = UserSchema(exclude=['password'])
         users = User.query.get(user_id)
         if not users:
             return {'status': 'error', 'data': 'not found'}, 404
