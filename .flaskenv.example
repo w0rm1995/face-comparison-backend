@@ -1,0 +1,7 @@
+FLASK_APP=run.py
+DB_HOST=your host
+DB_DATABASE=your db
+DB_USERNAME=your username
+DB_PASSWORD=your password
+DB_CHARSET=UTF8MB4
+JWT_SECRET_KEY = your secret key
