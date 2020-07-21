@@ -5,7 +5,6 @@ from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
-from resources.error import errors
 
 db = SQLAlchemy()
 ma = Marshmallow()
@@ -18,7 +17,7 @@ def create_app():
 
     # Load config
     app.config.from_pyfile('config.py')
-    api = Api(app, errors=errors)
+    api = Api(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
     db.init_app(app)
